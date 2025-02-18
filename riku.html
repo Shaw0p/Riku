@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPHS Lover</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to right, #6a0dad, #ffffff);
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        .hidden {
+            display: none;
+        }
+        header {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #6a0dad;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            margin: 0;
+            border-radius: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+        .login-screen {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+        }
+        .login-screen input, .login-screen button {
+            margin: 10px;
+            padding: 15px;
+            font-size: 18px;
+            border-radius: 5px;
+            width: 80%;
+        }
+        .login-screen button {
+            background: #6a0dad;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .login-screen input {
+            background: #fff;
+            color: #333;
+            border: 1px solid #6a0dad;
+        }
+        .errorMessage {
+            color: red;
+            font-size: 16px;
+            display: none;
+        }
+        .gallery-item {
+            display: inline-block;
+            margin: 15px;
+            width: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .caption {
+            font-size: 14px;
+            color: #fff;
+            margin-top: 10px;
+            font-style: italic;
+        }
+        .favorites {
+            background-color: #6a0dad;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 30px;
+        }
+        .favorites input {
+            padding: 10px;
+            font-size: 16px;
+            width: 80%;
+            margin: 10px 0;
+            border-radius: 5px;
+            background-color: #fff;
+            color: #333;
+            border: 1px solid #6a0dad;
+        }
+        .favorites button {
+            background-color: #fff;
+            color: #6a0dad;
+            border: 1px solid #6a0dad;
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .favorites button:hover {
+            background-color: #6a0dad;
+            color: white;
+        }
+        section {
+            margin: 20px 0;
+        }
+        .timeline {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .letters {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .music {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .music button {
+            background: #6a0dad;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .music button:hover {
+            background: #5a0c8f;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-screen" id="loginScreen">
+        <h2 style="color: white; font-size: 2rem;">Enter Your Name</h2>
+        <input type="text" id="userName" placeholder="Your Name">
+        <h2 style="color: white; font-size: 2rem;">Enter Your Lover's Name</h2>
+        <input type="text" id="loverName" placeholder="Lover's Name">
+        <button onclick="checkLogin()">Enter</button>
+        <p id="errorMessage" class="errorMessage">Wrong Names! Try Again.</p>
+    </div>
+
+    <div id="mainContent" class="hidden">
+        <header>SPHS Lover 💜</header>
+        <section class="timeline">
+            <h2>Our Journey</h2>
+            <p>From the first moment we met to all our breakups and patch-ups, our love has grown stronger. This is our story.</p>
+        </section>
+        <section class="gallery">
+            <h2>Photo Gallery</h2>
+            <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.31_c83c5a72 copy.jpg" alt="Moment 1"><div class="caption">"Every love story is beautiful, but ours is my favorite."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.31_da2f836a.jpg" alt="Moment 2"><div class="caption">"Together is a wonderful place to be."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.32_27b59095.jpg" alt="Moment 3"><div class="caption">"You stole my heart, but I'll let you keep it."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.32_98b1910d.jpg" alt="Moment 4"><div class="caption">"Forever isn’t long enough with you."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.32_ed06045a.jpg" alt="Moment 5"><div class="caption">"You are my today and all my tomorrows."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.33_5471c9a8.jpg" alt="Moment 6"><div class="caption">"You make my heart skip a beat."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.34_b315831c.jpg" alt="Moment 7"><div class="caption">"Loving you is the easiest thing I’ve ever done."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.34_eb7a03bf.jpg" alt="Moment 8"><div class="caption">"Your love is the best gift life has given me."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.35_25fb9148.jpg" alt="Moment 9"><div class="caption">"I still fall for you every single day."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.35_57f161fa.jpg" alt="Moment 10"><div class="caption">"With you, every moment is magic."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.36_3b352f8e.jpg" alt="Moment 11"><div class="caption">"No distance can separate what’s meant to be."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.36_3d345c30.jpg" alt="Moment 12"><div class="caption">"You are my happy place."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.37_64a2ce3f.jpg" alt="Moment 13"><div class="caption">"Holding your hand is my favorite thing."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 14.58.38_2e0b0a30.jpg" alt="Moment 14"><div class="caption">"You complete me."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.43_3c83f752.jpg" alt="Moment 15"><div class="caption">"Our love is timeless."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.48_a80fea9c.jpg" alt="Moment 16"><div class="caption">"I love you more than words can express."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.41_f0a2667d.jpg" alt="Moment 17"><div class="caption">"Every second with you is special."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.42_a417937a.jpg" alt="Moment 18"><div class="caption">"You light up my life like nobody else."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.47_c3da9c6f.jpg" alt="Moment 19"><div class="caption">"I choose you, always."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.42_72e16af3.jpg" alt="Moment 20"><div class="caption">"Our love is written in the stars."</div></div>
+        <div class="gallery-item"><img src="WhatsApp Image 2025-02-17 at 15.12.40_32a6d555.jpg" alt="Moment 21"><div class="caption">"I’m so lucky to have you."</div></div>
+            
+        </section>
+        <section class="letters">
+            <h2>Love Letters</h2>
+            <p>Every time I look at you, I see a universe more beautiful than words can describe...
+            Every time I look at you, I see a universe more beautiful than words can describe. 
+            Your eyes hold galaxies of dreams, your smile melts away all my worries, and your presence 
+            is the calm in my storm. You are the poetry my heart writes every day, the melody that my soul 
+            hums in silence. Every moment with you is a blessing, and every memory is etched in gold.  
+            You are not just a part of my life; you are my life, my happiness, my forever.  
+            No matter how far or near, my heart beats for you, and it always will. 💜
+
+        </p>
+        </section>
+        <section class="music">
+            <h2>Our Song</h2>
+            <audio id="loveSong" loop>
+                <source src="Tum Jab Paas.mp3" type="audio/mpeg">
+            </audio>
+            <button id="playPause">Play</button>
+        </section>
+        <section class="favorites">
+            <h2>Your Favorite Things</h2>
+            <label for="favColor">What's your favorite color?</label>
+            <input type="text" id="favColor" placeholder="Your favorite color">
+            <label for="favFood">What's your favorite food?</label>
+            <input type="text" id="favFood" placeholder="Your favorite food">
+            <label for="favMovie">What's your favorite movie?</label>
+            <input type="text" id="favMovie" placeholder="Your favorite movie">
+            <button onclick="saveFavorites()">Save Favorites</button>
+        </section>
+    </div>
+
+    <script>
+        function checkLogin() {
+            var userName = document.getElementById("userName").value.trim().toLowerCase();
+            var loverName = document.getElementById("loverName").value.trim().toLowerCase();
+            if (userName === "riku" && loverName === "shona mon") {
+                document.getElementById("loginScreen").style.display = "none";
+                document.getElementById("mainContent").classList.remove("hidden");
+                document.querySelector("header").style.display = "block";
+                document.querySelector(".timeline").style.display = "block";
+                document.querySelector(".gallery").style.display = "block";
+                document.querySelector(".letters").style.display = "block";
+                document.querySelector(".music").style.display = "block";
+                document.querySelector(".favorites").style.display = "block";
+            } else {
+                document.getElementById("errorMessage").style.display = "block";
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var audio = document.getElementById("loveSong");
+            var button = document.getElementById("playPause");
+            button.addEventListener("click", function () {
+                if (audio.paused) {
+                    audio.play();
+                    button.textContent = "Pause";
+                } else {
+                    audio.pause();
+                    button.textContent = "Play";
+                }
+            });
+        });
+
+        function saveFavorites() {
+            var favColor = document.getElementById("favColor").value;
+            var favFood = document.getElementById("favFood").value;
+            var favMovie = document.getElementById("favMovie").value;
+
+            alert("Your Favorite Things have been saved!\nColor: " + favColor + "\nFood: " + favFood + "\nMovie: " + favMovie);
+        }
+    </script>
+</body>
+</html>
